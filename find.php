@@ -23,12 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Insert data into the CT_expressedInterest table
     $sql = "INSERT INTO CT_expressedInterest (forename, surname, postalAddress, mobileTelNo, email, sendMethod, catID)
             VALUES ('$forename', '$surname', '$postalAddress', '$mobileNumber', '$email', '$sendMethod', '$category')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Record inserted successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+if ($conn->query($sql) === TRUE) {
+    echo '<script>alert("Record inserted successfully!");</script>';
+} else {
+    echo '<script>alert("Error: ' . $sql . '\n' . $conn->error . '");</script>';
+}
 }
 
 // Retrieve categories from the CT_category table
@@ -56,8 +55,27 @@ $conn->close();
     <script src='main.js'></script>
 </head>
 <body>
-    
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+           
+<nav class="nav">
+      <div>
+          SVG IMG
+      </div>
+    <ul class="nav-ul">
+      <li><a href="landing.html">Home</a></li>
+      <li><a href="viewrequests.php">View Requests</a></li>
+      <li><a href="find.php">Find Out More</a></li>
+      <li><a href="credits.html">Credits</a></li>
+    </ul>
+  </nav>
+
+   <div class="about">
+          <div class="abt-content">
+              <div class="abt-box">
+                <div class="heading">
+                  <h2 class="sub-heading">Find Out More</h2>
+                  <div class="line"></div>
+                 </div>               
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="form">
   <label for="forename">Forename:</label>
   <input type="text" id="forename" name="forename" required>
 
@@ -86,8 +104,84 @@ $conn->close();
     <option value="email">Email</option>
   </select>
 
-  <button type="submit">Submit</button>
+  <button type="submit" style="margin-top:10px">Submit</button>
 </form>
+
+
+              </div>
+          </div>
+          <div class="abt-img">
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="location">
+        <div class="myloc">
+            <h1>Chollerton Tearooms</h1>
+            <h3>A relaxing country hotel at the edge of Oulton Broad, Suffolk. Treat yourself, because everyone deserves a holiday.</h3>
+            <button>BOOK NOW</button>
+            
+                <div class="contact">
+                  <div>
+                    <img src="assets/icons8-phone.svg"  style="width: 32px; fill:white"> 01916980085
+                  </div> 
+                  <div>
+                    <img src="assets/email.svg"  style="width: 32px; fill:white">  info@chollertontearooms.co.uk
+                  </div>
+                  <div>
+                    <img src="assets/email.svg"  style="width: 32px; fill:white">  LOCATION
+                  </div>
+
+                  </div>
+            
+        </div>
+        <!--div class="map">
+            ADD MAP
+        </div-->
+
+    </div>
+<div class="footer">
+    <div class="contain">
+    <div class="col">
+      <h1>Company</h1>
+      <ul>
+        <li>About</li>
+        <li>Mission</li>
+        <li>Services</li>
+        <li>Social</li>
+        <li>Get in touch</li>
+      </ul>
+    </div>
+    
+    <div class="col">
+      <h1>Support</h1>
+      <ul>
+        <li>Contact us</li>
+        <li>Web chat</li>
+        <li>Open ticket</li>
+      </ul>
+    </div>
+    <div class="col social">
+      <h1>Social</h1>
+      <ul>
+        <li><img src="assets/icons8-facebook (1).svg" width="32" style="width: 32px; fill:white"></li>
+        <li><img src="assets/icons8-insta.svg" width="32" style="width: 32px;"></li>
+        <li><img src="assets/icons8-whatsapp (1).svg" width="32" style="width: 32px;"></li>
+
+      </ul>
+    </div>
+  <div class="clearfix"></div>
+  </div>
+  </div>
 
 </body>
 </html>

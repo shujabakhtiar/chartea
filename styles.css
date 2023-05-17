@@ -6,6 +6,11 @@
 * {
   font-family: ownFont;
 }
+.logo{
+  width: 50px;
+  height: 50px;
+  fill: white ;
+}
 body {
     min-height: 100vh;
     margin: 0;
@@ -39,7 +44,7 @@ body {
 
   .nav{
       position: fixed;
-      width: 100%;
+      width: 100vw;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -56,6 +61,12 @@ body {
   .nav-ul  >li > a :hover{
     color: magenta !important;
     }
+  .form{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    justify-content: space-evenly;
+  }
   .main-board{
       height: 100vh;
       width: 100%;
@@ -82,6 +93,9 @@ top: 272px;
       line-height: 133px;
       color: #ffffff 
   }
+  .main-sub{
+    font-size: 30px;
+  }
   .about{
       width: 100%;
       height: 100vh;
@@ -91,22 +105,36 @@ top: 272px;
   .abt-content{
       width: 50%;
   }
+  .line{
+    width: 70%;
+    height: 2px;
+    background-color: #4e380a;
+    margin-left: 40px;
+    margin-top: 68px;
+  }
+  .heading{
+    display: flex;
+    
+    
+  }
   .abt-box{
     margin-top: 166px;
     margin-left: 70px;
-    width: 500px;
+    max-width: 600px;
     height: 400px;
   }
-  .abt-box>h2{
+  .sub-heading{
     font-weight: 700;
-font-size: 64px;
+  font-size: 64px;
+margin-block-start: 0.43em;
+margin-block-end: 0.43em;
+margin-bottom: 60px;
   }
   .abt-box>p{
     font-style: normal;
 font-weight: 400;
 font-size: 20px;
 line-height: 130.4%;
-margin-top: 70px;
   }
   .abt-img{
       background-image: url(./assets/animg.jpg);
@@ -155,6 +183,19 @@ margin-top: 70px;
                 grid-gap: 30px;
     }
   }
+  .contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact>div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 30px;
+    color: white;
+    cursor: pointer;
+  }
   .card{
     width: 300px !important;
     height: 500px;
@@ -168,9 +209,10 @@ margin-top: 70px;
     padding: 10px;
   }
   .card-img{
-height: 300px;
-
-      object-fit:contain;
+    height: 300px;
+    object-fit:contain;
+    background-size: cover; 
+    background-position: center;
 
   }
   .card:hover{
@@ -236,7 +278,7 @@ button:hover{
     width: 100%;
     position: relative;
     height: auto;
-    background-color: #070617;
+    background-color: #4e380a;
   }
   .footer .col {
     width: 190px;
@@ -293,12 +335,15 @@ button:hover{
     .contain {
       width: 1200px;
       margin: 0 auto;
+      display: flex;
+      justify-content: center;
     }
   }
   @media only screen and (max-width: 1139px) {
     .contain .social {
       width: 1000px;
       display: block;
+      
     }
     .social h1 {
       margin: 0px;

@@ -1,16 +1,13 @@
 <?php
-// Step 1: Establish a database connection
-$servername = "localhost";  // Replace with your server name
-$username = "root";     // Replace with your username
-$password = "";     // Replace with your password
-$dbname = "ct";     // Replace with your database name
-
+$servername = "localhost";  
+$username = "root";    
+$password = "";     
+$dbname = "ct";    
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Step 2: Query the database
 $sql = "SELECT expressInterestID, forename, surname, postalAddress, mobileTelNo, email, sendMethod, catDesc
         FROM CT_expressedInterest
         JOIN CT_category ON CT_expressedInterest.catID = CT_category.catID
@@ -18,7 +15,6 @@ $sql = "SELECT expressInterestID, forename, surname, postalAddress, mobileTelNo,
 
 $result = $conn->query($sql);
 
-// Step 3: Generate the web page
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +37,7 @@ $result = $conn->query($sql);
 
 </head>
 <body>
-
+        
 <nav class="nav">
       <div>
           SVG IMG
@@ -53,7 +49,13 @@ $result = $conn->query($sql);
       <li><a href="credits.html">Credits</a></li>
     </ul>
   </nav>
-    <h1>View Requests</h1>
+  <div class="heading"  >
+    <h2 class="sub-heading"  style="margin-left:70px" ></h2>
+   </div>
+   <div class="heading"  >
+    <h2 class="sub-heading"  style="margin-left:70px" >View Requests</h2>
+    <div class="line"></div>
+   </div>
     <table>
         <tr>
             <th>Forename</th>
@@ -84,11 +86,66 @@ $result = $conn->query($sql);
         ?>
 
     </table>
+    <div class="location">
+        <div class="myloc">
+            <h1>Chollerton Tearooms</h1>
+            <h3>A relaxing country hotel at the edge of Oulton Broad, Suffolk. Treat yourself, because everyone deserves a holiday.</h3>
+            <button>BOOK NOW</button>
+            
+                <div class="contact">
+                  <div>
+                    <img src="assets/icons8-phone.svg"  style="width: 32px; fill:white"> 01916980085
+                  </div> 
+                  <div>
+                    <img src="assets/email.svg"  style="width: 32px; fill:white">  info@chollertontearooms.co.uk
+                  </div>
+                  <div>
+                    <img src="assets/email.svg"  style="width: 32px; fill:white">  LOCATION
+                  </div>
 
+                  </div>
+            
+        </div>
+       
+
+    </div>
+<div class="footer">
+    <div class="contain">
+    <div class="col">
+      <h1>Company</h1>
+      <ul>
+        <li>About</li>
+        <li>Mission</li>
+        <li>Services</li>
+        <li>Social</li>
+        <li>Get in touch</li>
+      </ul>
+    </div>
+    
+    <div class="col">
+      <h1>Support</h1>
+      <ul>
+        <li>Contact us</li>
+        <li>Web chat</li>
+        <li>Open ticket</li>
+      </ul>
+    </div>
+    <div class="col social">
+      <h1>Social</h1>
+      <ul>
+        <li><img src="assets/icons8-facebook (1).svg" width="32" style="width: 32px; fill:white"></li>
+        <li><img src="assets/icons8-insta.svg" width="32" style="width: 32px;"></li>
+        <li><img src="assets/icons8-whatsapp (1).svg" width="32" style="width: 32px;"></li>
+
+      </ul>
+    </div>
+  <div class="clearfix"></div>
+  </div>
+  </div>
 </body>
 </html>
 
 <?php
-// Step 4: Close the database connection
+
 $conn->close();
 ?>
