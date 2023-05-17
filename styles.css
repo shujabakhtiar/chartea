@@ -142,14 +142,21 @@ margin-top: 70px;
   }
   .cards{
 
-      height: 575px;
+      min-height: 575px;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       
     }
+    @media  (max-width: 1370px ) {
+      .cards {
+        display: grid;
+        grid-template-columns: auto auto;
+                grid-gap: 30px;
+    }
+  }
   .card{
-    min-width: 300px;
+    width: 300px !important;
     height: 500px;
     max-height: 600px;
 
@@ -158,12 +165,12 @@ margin-top: 70px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    padding: 10px;
   }
   .card-img{
-height: 440px;
+height: 300px;
 
       object-fit:contain;
-      padding: 10px;
 
   }
   .card:hover{
@@ -181,10 +188,11 @@ margin-bottom: 0px;
   .card-content{
     margin-left: 10px;
     font-weight: 400;
-
-    font-size: 20px;
+    font-size: 18px;
     line-height: 23px;
-   margin-top: 16px !important;
+    margin-top: 16px !important;
+    max-width: 280px;
+
   }
   .myloc{
     margin-top:75px;

@@ -37,8 +37,22 @@ $result = $conn->query($sql);
             border-bottom: 1px solid #ddd;
         }
     </style>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
+
+<nav class="nav">
+      <div>
+          SVG IMG
+      </div>
+    <ul class="nav-ul">
+      <li><a href="landing.html">Home</a></li>
+      <li><a href="viewrequests.php">View Requests</a></li>
+      <li><a href="find.php">Find Out More</a></li>
+      <li><a href="credits.html">Credits</a></li>
+    </ul>
+  </nav>
     <h1>View Requests</h1>
     <table>
         <tr>
